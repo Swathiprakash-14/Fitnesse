@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<suiteResults>
+  <FitNesseVersion>v20221219</FitNesseVersion>
+  <rootPath>RerunLastFailures_FitNesseForAppian-Examples-TestExample</rootPath>
+  <pageHistoryReference>
+    <name>RerunLastFailures_FitNesseForAppian-Examples-TestExample</name>
+    <date>2023-06-15T18:56:20+05:30</date>
+    <pageHistoryLink>RerunLastFailures_FitNesseForAppian-Examples-TestExample?pageHistory&amp;resultDate=20230615185620</pageHistoryLink>
+    <counts>
+      <right>0</right>
+      <wrong>0</wrong>
+      <ignores>0</ignores>
+      <exceptions>0</exceptions>
+    </counts>
+    <runTimeInMillis>23</runTimeInMillis>
+  </pageHistoryReference>
+  <pageHistoryReference>
+    <name>FitNesseForAppian.Examples.TestExample</name>
+    <date>2023-06-15T18:56:20+05:30</date>
+    <pageHistoryLink>FitNesseForAppian.Examples.TestExample?pageHistory&amp;resultDate=20230615185620</pageHistoryLink>
+    <counts>
+      <right>0</right>
+      <wrong>0</wrong>
+      <ignores>0</ignores>
+      <exceptions>13</exceptions>
+    </counts>
+    <runTimeInMillis>104</runTimeInMillis>
+  </pageHistoryReference>
+  <executionLog>
+    <testSystem>slim:fitnesse.slim.SlimService</testSystem>
+    <command>java -Dlog4j.debug -Dlog4j.configuration=file:\\\C:\path\to\thisProject\log4j.properties -cp "C:\FitNesse for Appian Combined Files 5312023\fitnesse-for-appian-23.2\lib\fitnesse-20221219-standalone.jar" fitnesse.slim.SlimService 1</command>
+    <exitCode>0</exitCode>
+    <stdOut></stdOut>
+    <stdErr></stdErr>
+  </executionLog>
+  <executionLog>
+    <testSystem>slim:fitnesse.slim.SlimService</testSystem>
+    <command>java -Dlog4j.configuration=file:///C:\path\to\thisProject/log4j.properties -cp "C:\path\to\thisProject/**.jar;C:\FitNesse for Appian Combined Files 5312023\fitnesse-for-appian-23.2\lib\fitnesse-20221219-standalone.jar" fitnesse.slim.SlimService 1</command>
+    <exitCode>0</exitCode>
+    <stdOut></stdOut>
+    <stdErr></stdErr>
+  </executionLog>
+  <finalCounts>
+    <right>0</right>
+    <wrong>0</wrong>
+    <ignores>1</ignores>
+    <exceptions>1</exceptions>
+  </finalCounts>
+  <totalRunTimeInMillis>837</totalRunTimeInMillis>
+</suiteResults>
+

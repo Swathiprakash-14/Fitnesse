@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<testResults>
+  <FitNesseVersion>v20221219</FitNesseVersion>
+  <rootPath>FitNesseForAppian.Examples.TestExample</rootPath>
+  <executionLog>
+    <testSystem>slim:fitnesse.slim.SlimService</testSystem>
+    <command>java -Dlog4j.configuration=file:///C:FitNesse for Appian Combined Files 5312023 itnesse-for-appian-23.2/log4j.properties -cp "C:FitNesse for Appian Combined Files 5312023itnesse-for-appian-23.2/**.jar;C:\FitNesse for Appian Combined Files 5312023\fitnesse-for-appian-23.2\lib\fitnesse-20221219-standalone.jar" fitnesse.slim.SlimService 1</command>
+    <exitCode>1</exitCode>
+    <stdOut>Error: Could not find or load main class for
+Caused by: java.lang.ClassNotFoundException: for
+</stdOut>
+    <stdErr></stdErr>
+    <exception>Error SLiM server died before Header Message could be read. </exception>
+  </executionLog>
+  <finalCounts>
+    <right>0</right>
+    <wrong>0</wrong>
+    <ignores>0</ignores>
+    <exceptions>1</exceptions>
+  </finalCounts>
+  <totalRunTimeInMillis>229</totalRunTimeInMillis>
+</testResults>
+

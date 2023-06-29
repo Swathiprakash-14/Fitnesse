@@ -1,0 +1,107 @@
+---
+Help: Cancel , Submit - Field Type validation,Mandatory check,Maximum character validation
+Test
+---
+!***> FitNesse Configurations
+
+!define TEST_SYSTEM {slim}
+!define COMMAND_PATTERN {java -Dlog4j.configuration=file:///${automated.testing.home}/log4j.properties -cp %p %m}
+!path ${automated.testing.home}/**.jar
+*!
+!*** Initialization and Login to Tempo
+
+!| script             |com.appiancorp.ps.automatedtest.fixture.SitesFixture|
+|setup with           |CHROME                   |browser                   |
+|set appian url to    |https://appiancoe.vuram.com/suite                   |
+|set appian version to|23.2                                                |
+|set appian locale to |en_US                                               |
+|login with username  |collaborator1                                       |
+
+!*** Cancel with entries in New Oppurtunity Ticket
+!| script                                              |
+|navigate to site|d2207vgotm-opportunity-tracker       |
+|populate field  |Title               |with|tracker    |
+|populate field  |Type                |with|Demo       |
+|populate field  |Attendees           |with|test       |
+|populate field  |Prospect Industry   |with|test1      |
+|populate field  |Channel             |with|Thru Appian|
+|populate field  |Org Size Of Prospect|with|100        |
+|populate field  |Solution            |with|CMS        |
+|populate field  |Opportunity Status  |with|SQL        |
+|populate field  |Location Of Prospect|with|TEST       |
+|populate field  |Freshsales Id       |with|ID@101     |
+|populate field  |Date                |with|06/26/2023 |
+|click on button |CANCEL                               |
+|click on button |YES                                  |
+
+!*** Add new oppurtunity ticket - Field Type validation
+
+!| script                                                                                                                                                                             |
+|navigate to site     |d2207vgotm-opportunity-tracker                                                                                                                                 |
+|populate field       |Title               |with  |Mr                                                                                                                                 |
+|populate field       |Type                |with  |Demo                                                                                                                               |
+|populate field       |Attendees           |with  |test                                                                                                                               |
+|populate field       |Prospect Industry   |with  |test1                                                                                                                              |
+|populate field       |Channel             |with  |Thru Appian                                                                                                                        |
+|populate field       |Org Size Of Prospect|with  |100                                                                                                                                |
+|populate field       |Solution            |with  |CMS                                                                                                                                |
+|populate field       |Opportunity Status  |with  |SQL                                                                                                                                |
+|populate field       |Location Of Prospect|with  |TEST                                                                                                                               |
+|populate field       |Freshsales Id       |with  |ID@101                                                                                                                             |
+|populate field       |Date                |with  |06/26/2023                                                                                                                         |
+|click on radio option|Y                                                                                                                                                              |
+|populate             |PARAGRAPH           |field |[1]            |with|Reason                                                                                                        |
+|populate             |PARAGRAPH           |field |[2]            |with|Test                                                                                                          |
+|click on link        |Add Document                                                                                                                                                   |
+|populate grid        |[1]                 |column|Document Type  |row |[1]|with|Document Type 1                                                                                      |
+|populate grid        |[1]                 |column|Document Upload|row |[1]|with|C:/Users/swathip/Downloads/golub_8HZXUv5Sd8t7722jVdMRQesccZBtinr5IHzYk9U4miwp72v5QU3fdmyNXHjpdnIU.pdf|
+|populate             |PARAGRAPH           |field |[3]            |with|comments                                                                                                      |
+|click on button      |SUBMIT                                                                                                                                                         |
+|click on button      |YES                                                                                                                                                            |
+
+
+!*** Add new oppurtunity ticket - Field type validation - Negative and maximum character validation
+
+!| script                                                                                                                                                                             |
+|navigate to site     |d2207vgotm-opportunity-tracker                                                                                                                                 |
+|populate field       |Title               |with  |Oppurtunity@123                                                                                                                    |
+|populate field       |Type                |with  |Demo                                                                                                                               |
+|populate field       |Attendees           |with  |test                                                                                                                               |
+|populate field       |Prospect Industry   |with  |123                                                                                                                                |
+|populate field       |Channel             |with  |Thru Appian                                                                                                                        |
+|populate field       |Org Size Of Prospect|with  |100                                                                                                                                |
+|populate field       |Solution            |with  |CMS                                                                                                                                |
+|populate field       |Opportunity Status  |with  |SQL                                                                                                                                |
+|populate field       |Location Of Prospect|with  |TEST                                                                                                                               |
+|populate field       |Freshsales Id       |with  |ID@101                                                                                                                             |
+|populate field       |Date                |with  |26/06/2023                                                                                                                         |
+|click on radio option|Y                                                                                                                                                              |
+|populate             |PARAGRAPH           |field |[1]            |with|— — 3333 ~~~~ 9999 :::: 8888 ;;;; 6776 ```` 2332 ‘’’’ 3323 “””” 4343 @@@@                                     |
+|populate             |PARAGRAPH           |field |[2]            |with|Test                                                                                                          |
+|click on link        |Add Document                                                                                                                                                   |
+|populate grid        |[1]                 |column|Document Type  |row |[1]|with|Document Type 1                                                                                      |
+|populate grid        |[1]                 |column|Document Upload|row |[1]|with|C:/Users/swathip/Downloads/golub_8HZXUv5Sd8t7722jVdMRQesccZBtinr5IHzYk9U4miwp72v5QU3fdmyNXHjpdnIU.pdf|
+|populate             |PARAGRAPH           |field |[3]            |with|comments                                                                                                      |
+|click on button      |SUBMIT                                                                                                                                                         |
+|click on button      |YES                                                                                                                                                            |
+
+!*** Add new oppurtunity ticket - Mandatory Check
+!| script                                                                                                                                                                           |
+|navigate to site     |d2207vgotm-opportunity-tracker                                                                                                                               |
+|populate field       |Title             |with  |Oppurtunity                                                                                                                        |
+|populate field       |Type              |with  |Demo                                                                                                                               |
+|populate field       |Channel           |with  |Thru Appian                                                                                                                        |
+|populate field       |Solution          |with  |CMS                                                                                                                                |
+|populate field       |Opportunity Status|with  |SQL                                                                                                                                |
+|click on radio option|Y                                                                                                                                                            |
+|click on link        |Add Document                                                                                                                                                 |
+|populate grid        |[1]               |column|Document Type  |row |[1]|with|Document Type 1                                                                                      |
+|populate grid        |[1]               |column|Document Upload|row |[1]|with|C:/Users/swathip/Downloads/golub_8HZXUv5Sd8t7722jVdMRQesccZBtinr5IHzYk9U4miwp72v5QU3fdmyNXHjpdnIU.pdf|
+|populate             |PARAGRAPH         |field |[3]            |with|comments                                                                                                      |
+|click on button      |SUBMIT                                                                                                                                                       |
+|click on button      |YES                                                                                                                                                          |
+
+!*** Check for entry created in records
+!| script                                 |
+|click on site page|COLLECTIONS OF TICKETS|
+|click on record   |[1]                   |

@@ -1,0 +1,41 @@
+---
+Test
+---
+!***> FitNesse Configurations
+
+!define TEST_SYSTEM {slim}
+!define COMMAND_PATTERN {java -Dlog4j.configuration=file:///${automated.testing.home}/log4j.properties -cp %p %m}
+!path ${automated.testing.home}/**.jar
+*!
+
+!*** Initialization and Login to Tempo
+
+!|script              |com.appiancorp.ps.automatedtest.fixture.SitesFixture|
+|setup with           |CHROME                   |browser                   |
+|set appian url to    |https://appiancoe.vuram.com/suite                   |
+|set appian version to|23.2                                                |
+|set appian locale to |en_US                                               |
+|login with username  |collaborator1                                       |
+
+
+!*** Add new oppurtunity ticket 
+!| script                                                          |
+|navigate to site     |d2207vgotm-opportunity-tracker              |
+|populate field       |Title               |with |Mr               |
+|populate field       |Type                |with |Demo             |
+|populate field       |Attendees           |with |test             |
+|populate field       |Prospect Industry   |with |test1            |
+|populate field       |Channel             |with |Thru Appian      |
+|populate field       |Org Size Of Prospect|with |100              |
+|populate field       |Solution            |with |CMS              |
+|populate field       |Opportunity Status  |with |SQL              |
+|populate field       |Location Of Prospect|with |TEST             |
+|populate field       |Freshsales Id       |with |ID@101           |
+|populate field       |Date                |with |06/26/2023       |
+|click on radio option|Y                                           |
+|populate             |PARAGRAPH           |field|[1]|with|Reason  |
+|populate             |PARAGRAPH           |field|[2]|with|Test    |
+|populate             |PARAGRAPH           |field|[3]|with|comments|
+|click on button      |SUBMIT                                      |
+|click on button      |YES                                         |
+

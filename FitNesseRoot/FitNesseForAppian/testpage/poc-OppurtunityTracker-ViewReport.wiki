@@ -1,0 +1,32 @@
+---
+Test
+---
+!***> FitNesse Configurations
+
+!define TEST_SYSTEM {slim}
+!define COMMAND_PATTERN {java -Dlog4j.configuration=file:///${automated.testing.home}/log4j.properties -cp %p %m}
+!path ${automated.testing.home}/**.jar
+*!
+
+!*** Initialization and Login to Tempo
+
+!|script              |com.appiancorp.ps.automatedtest.fixture.SitesFixture|
+|setup with           |CHROME                   |browser                   |
+|set appian url to    |https://appiancoe.vuram.com/suite                   |
+|set appian version to|23.2                                                |
+|set appian locale to |en_US                                               |
+|login with username  |manager_test                                        |
+
+!*** View Report of Oppurtunity Ticket
+!|script                                                    |
+|click on menu  |Reports                                    |
+|click on report|D2207VGOTM My Report                       |
+|populate field |[2]|with  |Solution Vs Opportunity status  |
+|click on grid  |[1]|column|Opportunity Reference Id|row|[1]|
+|click on menu  |Reports                                    |
+|click on report|D2207VGOTM My Report                       |
+|populate field |[2]|Solution Traction                      |
+|click on grid  |[1]|column|Opportunity Reference Id|row|[1]|
+|click on menu  |Reports                                    |
+|click on report|D2207VGOTM My Report                       |
+|populate field |[2]|Type and Channel                       |
