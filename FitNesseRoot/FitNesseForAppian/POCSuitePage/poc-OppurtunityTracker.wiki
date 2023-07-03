@@ -101,7 +101,7 @@ Test
 |click on button      |SUBMIT                                                                                                                                                       |
 |click on button      |YES                                                                                                                                                          |
 
-!*** Check for entry created in records
+!*** Check for entry created in records list
 !| script                                 |
 |click on site page|COLLECTIONS OF TICKETS|
 |click on record   |[1]                   |
